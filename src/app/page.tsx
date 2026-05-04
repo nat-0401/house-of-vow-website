@@ -1,65 +1,90 @@
 import Image from "next/image";
+import Link from "next/link";
+import { assets } from "./content";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      <section className="home-hero-fullscreen">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          className="home-hero-image"
+          src={assets.homeMeadow}
+          alt="Romantic wedding reception in red hues"
+          fill
           priority
+          sizes="100vw"
+          style={{ objectPosition: "center center" }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <div className="home-hero-inner">
+          <div className="home-hero-wordmark" aria-label="The House of Vows">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={assets.logoHeroWordmark}
+              alt=""
+              width={2435}
+              height={729}
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <p className="home-hero-script">Intentional wedding design shaped by beauty and story.</p>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="home-intro-section">
+        <div className="home-shell home-overlap-stage">
+          <div className="home-overlap-copy">
+            <p className="eyebrow">Welcome</p>
+            <h2>Designing celebrations that feel personal, polished, and lasting.</h2>
+            <p>
+              A calm, intentional approach to weddings shaped by story, atmosphere, and refined
+              detail.
+            </p>
+            <Link href="/about" className="editorial-link">
+              Read More
+            </Link>
+          </div>
+
+          <div className="home-overlap-card primary-media">
+            <Image
+              src={assets.homeHillDark}
+              alt="Bride and groom in a green landscape"
+              fill
+              sizes="(max-width: 900px) 100vw, 38vw"
+            />
+          </div>
+
+          <div className="home-overlap-card secondary-media">
+            <Image
+              src={assets.homeBouquetFlatlay}
+              alt="Bouquet and bridal shoes flat lay"
+              fill
+              sizes="220px"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="home-quiet-section">
+        <div className="home-shell home-intro-grid">
+          <div className="home-intro-image landscape-image">
+            <Image
+              src={assets.homeHillCouple}
+              alt="Couple standing together on a green hill"
+              fill
+              sizes="(max-width: 900px) 100vw, 46vw"
+            />
+          </div>
+          <div className="home-story-copy">
+            <p className="eyebrow">Quietly Elegant</p>
+            <h2>For couples who care how it feels as much as how it looks.</h2>
+            <p>
+              Intimate, refined, and emotionally true.
+            </p>
+            <Link href="/contact" className="editorial-link">
+              Start Your Enquiry
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
