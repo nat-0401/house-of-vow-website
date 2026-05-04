@@ -46,7 +46,7 @@ export default function ContactPage() {
               <p className="eyebrow">Notes</p>
               <p>
                 Tell us about your guest count, date, venue, location, and the
-                kind of atmosphere you imagine.
+                kind of atmosphere you imagine 
               </p>
             </div>
           </aside>
