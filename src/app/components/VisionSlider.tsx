@@ -37,7 +37,7 @@ export function VisionSlider({ quotes }: { quotes: string[] }) {
         ))}
       </button>
       <div className="vision-credit-logo" aria-label="The House of Vows">
-        <Image src={assets.logoVisionWordmark} alt="" width={1805} height={505} />
+        <Image src={assets.logoVisionWordmark} alt="" width={1733} height={433} />
       </div>
     </div>
   );
