@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { assets, navItems } from "../content";
 
@@ -10,8 +10,10 @@ export function Header() {
   const shellRef = useRef<HTMLDivElement>(null);
   const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pointerInsideHeaderRef = useRef(false);
+  const mobileNavOpenRef = useRef(false);
   const pathname = usePathname();
   const hasRevealedHomeHeaderRef = useRef(false);
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   const applyHidden = useCallback((hidden: boolean) => {
     shellRef.current?.classList.toggle("is-retracted", hidden);
@@ -26,7 +28,7 @@ export function Header() {
 
   const scheduleIdleRetract = useCallback(() => {
     clearIdleTimer();
-    if (pointerInsideHeaderRef.current) {
+    if (pointerInsideHeaderRef.current || mobileNavOpenRef.current) {
       return;
     }
 
@@ -40,6 +42,33 @@ export function Header() {
     hasRevealedHomeHeaderRef.current = true;
     applyHidden(false);
   }, [applyHidden]);
+
+  useEffect(() => {
+    mobileNavOpenRef.current = isMobileNavOpen;
+
+    if (isMobileNavOpen) {
+      clearIdleTimer();
+      revealHeader();
+    }
+  }, [clearIdleTimer, isMobileNavOpen, revealHeader]);
+
+  useEffect(() => {
+    if (!isMobileNavOpen) {
+      return;
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileNavOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isMobileNavOpen]);
 
   useEffect(() => {
     const isHome = pathname === "/";
@@ -149,25 +178,45 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <details className="mobile-nav">
-            <summary aria-label="Open navigation menu">
+          <div className={`mobile-nav ${isMobileNavOpen ? "is-open" : ""}`}>
+            <button
+              type="button"
+              className="mobile-nav-trigger"
+              aria-expanded={isMobileNavOpen}
+              aria-label={isMobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-controls="mobile-navigation"
+              onClick={(event) => {
+                event.preventDefault();
+                setMobileNavOpen((isOpen) => !isOpen);
+              }}
+            >
               <span />
               <span />
               <span />
-            </summary>
-            <nav aria-label="Mobile navigation">
-              {navItems.map((item) => (
-                <Link href={item.href} key={item.href}>
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </details>
+            </button>
+            {isMobileNavOpen ? (
+              <nav id="mobile-navigation" aria-label="Mobile navigation">
+                {navItems.map((item) => (
+                  <Link href={item.href} key={item.href} onClick={() => setMobileNavOpen(false)}>
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            ) : null}
+          </div>
           <Link href="/contact" className="enquire-link">
             Enquire
           </Link>
         </header>
       </div>
+      {isMobileNavOpen ? (
+        <button
+          type="button"
+          className="mobile-nav-backdrop"
+          aria-label="Close navigation menu"
+          onClick={() => setMobileNavOpen(false)}
+        />
+      ) : null}
     </>
   );
 }
