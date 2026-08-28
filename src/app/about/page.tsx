@@ -6,6 +6,9 @@ import {
   visionCopy,
 } from "../content";
 import { VisionSlider } from "../components/VisionSlider";
+import { metadataForRoute, routeSeo } from "../seo";
+
+export const metadata = metadataForRoute(routeSeo.about);
 
 export default function AboutPage() {
   return (

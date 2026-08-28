@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { EditCarousel } from "../components/EditCarousel";
 import { assets } from "../content";
+import { metadataForRoute, routeSeo } from "../seo";
+
+export const metadata = metadataForRoute(routeSeo.edit);
 
 const carouselImages = [
   { src: assets.editDoorwayCouple, alt: "Bride and groom framed by an arched doorway" },

@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { EnquiryForm } from "../components/EnquiryForm";
 import { assets } from "../content";
+import { metadataForRoute, routeSeo } from "../seo";
+
+export const metadata = metadataForRoute(routeSeo.contact);
 
 export default function ContactPage() {
   return (

@@ -169,7 +169,14 @@ export function Header() {
           }}
         >
           <Link href="/" className="brand-link" aria-label="The House of Vows home">
-            <Image src={assets.logoFullRed} alt="" width={2641} height={3054} priority />
+            <Image
+              src={assets.logoFullRed}
+              alt=""
+              width={92}
+              height={106}
+              sizes="92px"
+              quality={60}
+            />
           </Link>
           <nav className="desktop-nav" aria-label="Main navigation">
             {navItems.map((item) => (
@@ -239,8 +246,10 @@ export function Footer() {
           <Image
             src={assets.logoFullRed}
             alt="The House of Vows"
-            width={2641}
-            height={3054}
+            width={92}
+            height={106}
+            sizes="92px"
+            quality={60}
           />
           <p>Intentional wedding design shaped by beauty and story.</p>
         </div>

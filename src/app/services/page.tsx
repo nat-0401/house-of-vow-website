@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { assets, partners, services } from "../content";
+import { JsonLd, metadataForRoute, routeSeo, servicesJsonLd } from "../seo";
+
+export const metadata = metadataForRoute(routeSeo.services);
 
 export default function ServicesPage() {
   const partnerCards = [
@@ -23,6 +26,7 @@ export default function ServicesPage() {
 
   return (
     <>
+      <JsonLd data={servicesJsonLd} />
       <section className="services-editorial-hero">
         <Image
           src={assets.servicesHero}

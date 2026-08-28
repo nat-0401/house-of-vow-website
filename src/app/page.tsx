@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { assets } from "./content";
+import { metadataForRoute, routeSeo } from "./seo";
+
+export const metadata = metadataForRoute(routeSeo.home);
 
 export default function Home() {
   return (
@@ -11,21 +14,25 @@ export default function Home() {
           src={assets.homeMeadow}
           alt="Romantic wedding reception in red hues"
           fill
-          priority
+          preload
           sizes="100vw"
           style={{ objectPosition: "center center" }}
         />
         <div className="home-hero-inner">
-          <div className="home-hero-wordmark" aria-label="The House of Vows">
+          <div className="home-hero-wordmark">
             <Image
               src={assets.logoHeroWordmark}
-              alt=""
+              alt="The House of Vows"
               width={2435}
               height={729}
-              priority
+              preload
+              fetchPriority="high"
+              sizes="(max-width: 720px) 92vw, 860px"
             />
           </div>
-          <p className="home-hero-script">Intentional wedding design shaped by beauty and story.</p>
+          <h1 className="home-hero-script">
+            Intentional wedding design shaped by beauty and story.
+          </h1>
         </div>
       </section>
 
@@ -39,7 +46,7 @@ export default function Home() {
               detail.
             </p>
             <Link href="/about" className="editorial-link">
-              Read More
+              Read About Us
             </Link>
           </div>
 
@@ -49,6 +56,7 @@ export default function Home() {
               alt="Bride and groom in a green landscape"
               fill
               sizes="(max-width: 900px) 100vw, 38vw"
+              quality={68}
             />
           </div>
 
@@ -58,6 +66,7 @@ export default function Home() {
               alt="Bouquet and bridal shoes flat lay"
               fill
               sizes="220px"
+              quality={62}
             />
           </div>
         </div>
@@ -71,6 +80,7 @@ export default function Home() {
               alt="Couple standing together on a green hill"
               fill
               sizes="(max-width: 900px) 100vw, 46vw"
+              quality={68}
             />
           </div>
           <div className="home-story-copy">

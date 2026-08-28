@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { ClientLoveQuoteSlider } from "../components/ClientLoveQuoteSlider";
 import { assets } from "../content";
+import { metadataForRoute, routeSeo } from "../seo";
+
+export const metadata = metadataForRoute(routeSeo.clientLove);
 
 const clientQuotes = [
   {
