@@ -28,7 +28,7 @@ export default function AboutPage() {
           <p>
             We believe your wedding should be more than just a day — it should be a reflection of
             your journey, your love, and your values. Through thoughtful storytelling and
-            intentional design, love stories meet artful details.
+            intentional design, where love stories meet artful designs.
           </p>
         </div>
       </section>
@@ -43,14 +43,13 @@ export default function AboutPage() {
           />
         </div>
         <div className="redesign-about-story-copy">
-          <p className="eyebrow">Our Approach</p>
           <p>
             From the first spark of inspiration to the final toast, we work closely with you to
-            shape every detail — blending seamless coordination with refined aesthetics so the
+            shape every detail — blending seamless coordination with refined aesthetics to ensure the
             entire experience feels as joyful as the celebration itself.
           </p>
           <p>
-            Our goal is to redefine wedding planning and design in Malaysia, bringing timeless
+            Our goal is to redefine wedding planning and designs in Malaysia, bringing timeless
             celebrations to life with creativity, care, and authenticity.
           </p>
         </div>
@@ -59,9 +58,9 @@ export default function AboutPage() {
       <section className="redesign-mission">
         <div className="redesign-mission-copy">
           <p className="eyebrow">Mission</p>
-          <h2>To create celebrations with meaning, beauty, and calm execution.</h2>
+          <h2>{missionCopy[0]}</h2>
           <div className="redesign-mission-paragraphs">
-            {missionCopy.map((paragraph) => (
+            {missionCopy.slice(1).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>

@@ -70,7 +70,7 @@
   position: relative;
   height: 100vh;
   height: 100svh;
-  min-height: 100vh;
+  min-height: 100svh;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -104,7 +104,10 @@
 }
 
 .redesign-welcome {
-  padding: clamp(74px, 8vw, 124px) clamp(24px, 5.6vw, 112px) clamp(82px, 10vw, 144px);
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-start;
+  padding: clamp(112px, 14svh, 190px) clamp(24px, 5.6vw, 112px) clamp(82px, 10vw, 144px);
   background: var(--design-cream);
 }
 
@@ -170,7 +173,7 @@
 
 .redesign-home-story {
   position: relative;
-  min-height: 720px;
+  min-height: 100svh;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.74fr);
   align-items: center;
@@ -183,7 +186,7 @@
 
 .redesign-story-images {
   position: relative;
-  min-height: 510px;
+  min-height: min(68svh, 680px);
 }
 
 .redesign-story-image {
@@ -240,7 +243,7 @@
 }
 
 .redesign-about-intro {
-  min-height: 700px;
+  min-height: 100svh;
   display: grid;
   grid-template-columns: 1.15fr 0.9fr;
   align-items: center;
@@ -252,7 +255,7 @@
 
 .redesign-about-collage {
   position: relative;
-  min-height: 570px;
+  min-height: clamp(500px, 68svh, 780px);
 }
 
 .redesign-about-collage-image {
@@ -293,6 +296,7 @@
 }
 
 .redesign-about-story {
+  min-height: 100svh;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
@@ -304,7 +308,8 @@
 
 .redesign-about-story-image {
   position: relative;
-  min-height: 580px;
+  height: min(72svh, 760px);
+  min-height: 520px;
   overflow: hidden;
 }
 
@@ -322,6 +327,10 @@
 }
 
 .redesign-mission {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: clamp(80px, 9vw, 140px) clamp(24px, 5.6vw, 112px);
   color: var(--design-cream-text);
   background: var(--design-wine);
@@ -334,11 +343,11 @@
 }
 
 .redesign-mission-copy h2 {
-  max-width: 1100px;
+  max-width: none;
   margin-top: 30px;
   color: var(--design-cream-text);
-  font-size: clamp(34px, 4vw, 64px);
-  line-height: 1.14;
+  font-size: clamp(30px, 2.7vw, 44px);
+  line-height: 1.3;
 }
 
 .redesign-mission-paragraphs {
@@ -364,11 +373,14 @@
 
 .redesign-mission-image {
   position: relative;
-  aspect-ratio: 0.92;
+  aspect-ratio: 0.815;
   overflow: hidden;
 }
 
 .redesign-vision {
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
   padding: clamp(86px, 10vw, 150px) clamp(24px, 5vw, 90px);
   color: var(--design-cream-text);
   background: var(--design-wine);
@@ -404,17 +416,19 @@
 
 .redesign-founders {
   display: grid;
-  gap: clamp(90px, 12vw, 180px);
-  padding: clamp(90px, 11vw, 160px) clamp(24px, 5.6vw, 112px);
+  gap: 0;
+  padding: 0 clamp(24px, 5.6vw, 112px);
   color: var(--design-cream-text);
   background: var(--design-wine);
 }
 
 .redesign-founder {
+  min-height: 100svh;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr) minmax(0, 1fr);
   align-items: center;
   gap: clamp(24px, 4vw, 62px);
+  padding: clamp(76px, 9svh, 120px) 0;
 }
 
 .redesign-founder-copy {
@@ -428,7 +442,8 @@
 
 .redesign-founder-portrait {
   position: relative;
-  min-height: 620px;
+  height: min(74svh, 780px);
+  min-height: 520px;
   overflow: visible;
 }
 
@@ -454,6 +469,7 @@
 
 .redesign-founders > .redesign-pill-link {
   justify-self: center;
+  margin: 46px 0 64px;
 }
 
 @media (max-width: 1080px) {
@@ -471,7 +487,7 @@
   }
 
   .redesign-home-story {
-    min-height: 0;
+    min-height: 100svh;
     grid-template-columns: 1fr;
   }
 
@@ -608,6 +624,7 @@
   }
 
   .redesign-about-story-image {
+    height: auto;
     min-height: 0;
     aspect-ratio: 0.95;
   }
@@ -668,6 +685,7 @@
   }
 
   .redesign-founder-portrait {
+    height: auto;
     min-height: 0;
     aspect-ratio: 0.78;
     margin: 0 4px 18px;

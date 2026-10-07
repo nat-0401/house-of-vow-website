@@ -78,10 +78,9 @@ export const assets = {
 };
 
 export const missionCopy = [
-  "To spark meaningful growth and recognition in wedding branding and storytelling, crafting experiences that go beyond the expected.",
-  "We're here to create deeply personal, visually unforgettable weddings tailored to every bride's unique aesthetic. From concept to execution, every detail is thoughtfully designed to reflect each couple's love story.",
-  "Our goal is to redefine wedding planning in Sabah and Malaysia, blending intentional design with seamless, stress-free coordination.",
-  "Because we believe planning your big day should feel just as joyful as the celebration itself.",
+  "To spark meaningful growth and recognition in wedding branding and storytelling — crafting experiences that go beyond the expected.",
+  "We're here to create deeply personal, visually unforgettable weddings tailored to every couple's unique aesthetic. From concept to execution, every detail is thoughtfully designed to reflect each couple's love story.",
+  "Our goal is to redefine wedding planning and designs in Malaysia, bringing timeless celebrations to life with creativity, care, and authenticity.",
 ];
 
 export const visionCopy = [
