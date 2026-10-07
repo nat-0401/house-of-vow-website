@@ -12,6 +12,10 @@ export function Header() {
   const pointerInsideHeaderRef = useRef(false);
   const mobileNavOpenRef = useRef(false);
   const pathname = usePathname();
+  const isRedesignRoute = pathname === "/" || pathname === "/about";
+  const visibleNavItems = isRedesignRoute
+    ? navItems.filter((item) => item.href !== "/edit")
+    : navItems;
   const hasRevealedHomeHeaderRef = useRef(false);
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -155,7 +159,12 @@ export function Header() {
         }}
         aria-hidden="true"
       />
-      <div ref={shellRef} className={`header-shell ${pathname === "/" ? "is-retracted" : ""}`}>
+      <div
+        ref={shellRef}
+        className={`header-shell ${pathname === "/" ? "is-retracted" : ""} ${
+          isRedesignRoute ? "header-shell-redesign" : ""
+        }`}
+      >
         <header
           className="site-header"
           onPointerEnter={() => {
@@ -170,7 +179,7 @@ export function Header() {
         >
           <Link href="/" className="brand-link" aria-label="The House of Vows home">
             <Image
-              src={assets.logoFullRed}
+              src={pathname === "/" || pathname === "/about" ? assets.logoDark : assets.logoFullRed}
               alt=""
               width={92}
               height={106}
@@ -179,7 +188,7 @@ export function Header() {
             />
           </Link>
           <nav className="desktop-nav" aria-label="Main navigation">
-            {navItems.map((item) => (
+            {visibleNavItems.map((item) => (
               <Link href={item.href} key={item.href}>
                 {item.label}
               </Link>
@@ -203,7 +212,7 @@ export function Header() {
             </button>
             {isMobileNavOpen ? (
               <nav id="mobile-navigation" aria-label="Mobile navigation">
-                {navItems.map((item) => (
+                {visibleNavItems.map((item) => (
                   <Link href={item.href} key={item.href} onClick={() => setMobileNavOpen(false)}>
                     {item.label}
                   </Link>
@@ -212,7 +221,7 @@ export function Header() {
             ) : null}
           </div>
           <Link href="/contact" className="enquire-link">
-            Enquire
+            {isRedesignRoute ? "Inquire Now" : "Enquire"}
           </Link>
         </header>
       </div>
