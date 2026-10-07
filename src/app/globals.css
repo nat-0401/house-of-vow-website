@@ -174,10 +174,6 @@
 .redesign-home-story {
   position: relative;
   min-height: 100svh;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.74fr);
-  align-items: center;
-  gap: clamp(30px, 5vw, 84px);
   overflow: hidden;
   padding: clamp(76px, 8vw, 124px) clamp(24px, 5.6vw, 112px);
   color: var(--design-cream-text);
@@ -185,8 +181,10 @@
 }
 
 .redesign-story-images {
-  position: relative;
-  min-height: min(68svh, 680px);
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  pointer-events: none;
 }
 
 .redesign-story-image {
@@ -205,29 +203,32 @@
 }
 
 .redesign-story-image-wide {
-  top: 0;
-  left: 0;
-  width: 72%;
-  height: 78%;
+  top: 7%;
+  left: 5.6%;
+  width: 50%;
+  height: 65%;
 }
 
 .redesign-story-image-tall {
-  right: 0;
-  bottom: 0;
-  width: 37%;
-  height: 76%;
+  top: 30%;
+  right: 7.4%;
+  width: 21%;
+  height: 65%;
 }
 
 .redesign-home-story-copy {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  margin: 80px 0 0 -18%;
+  top: 31%;
+  left: 27%;
+  width: min(54%, 1060px);
+  margin: 0;
 }
 
 .redesign-home-story-copy h2 {
-  max-width: 750px;
+  max-width: none;
   color: var(--design-cream-text);
-  font-size: clamp(38px, 4.1vw, 70px);
+  font-size: clamp(36px, 3.6vw, 58px);
   line-height: 1.08;
 }
 
@@ -488,12 +489,40 @@
 
   .redesign-home-story {
     min-height: 100svh;
+    display: grid;
     grid-template-columns: 1fr;
+    align-content: center;
+    gap: 26px;
+  }
+
+  .redesign-story-images {
+    position: relative;
+    inset: auto;
+    min-height: min(62svh, 620px);
+  }
+
+  .redesign-story-image-wide {
+    top: 0;
+    left: 0;
+    width: 83%;
+    height: 76%;
+  }
+
+  .redesign-story-image-tall {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    width: 42%;
+    height: 65%;
   }
 
   .redesign-home-story-copy {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(740px, 100%);
     max-width: 740px;
-    margin: -60px 0 0 auto;
+    margin: -60px auto 0;
   }
 
   .redesign-founder {
