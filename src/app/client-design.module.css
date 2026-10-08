@@ -86,7 +86,7 @@
   .artboard > :is(h2, p, blockquote, a, div, img) { position: relative; left: auto; right: auto; top: auto; width: auto; }
   .frame .artboard > * { position: relative; top: auto; left: auto; right: auto; width: auto; }
   .hero > img { padding-top: 72px; }
-  .pages .servicesMobileTitle { display: block; position: absolute; z-index: 1; left: 24px; bottom: 64px; font-size: 48px; line-height: 1.1; color: white; }
+  .pages .servicesMobileTitle { display: block; position: absolute; z-index: 1; left: 24px; bottom: 64px; font-family: var(--font-display), Georgia, serif; font-size: 48px; line-height: 1.1; color: white; }
   .welcome .artboard { padding-top: 130px; }
   .pages .label, .welcomeLabel { font-size: 23px; line-height: 32px; }
   .welcomeTitle { margin-top: 24px; font-size: 34px; line-height: 1.25; }
