@@ -29,7 +29,7 @@
 .welcomeButton { position: absolute; left: 82px; top: 487px; width: 333px; height: 82px; font-size: 24px; }
 .storyWide { position: absolute; left: 82px; top: 147px; width: 730px; height: 487px; }
 .storyTall { position: absolute; left: 1052px; top: 309px; width: 309px; height: 464px; }
-.storyTitle { position: absolute; left: 397px; top: 592px; width: 765px; font-size: 40px; line-height: 59px; text-align: right; }
+.storyTitle { position: absolute; left: 397px; top: 592px; width: 765px; font-size: 43px; line-height: 59px; text-align: right; }
 .storyButton { position: absolute; left: 397px; top: 718px; width: 264px; height: 56px; }
 .aboutFirst { position: absolute; left: 117px; top: 115px; width: 379px; height: 569px; }
 .aboutSecond { position: absolute; left: 520px; top: 115px; width: 379px; height: 569px; }
@@ -84,7 +84,7 @@
   .frame { height: auto; min-height: 100svh; overflow: hidden; }
   .artboard { position: relative; width: auto; height: auto; left: auto; top: auto; transform: none; padding: 90px 24px 64px; }
   .artboard > :is(h2, p, blockquote, a, div, img) { position: relative; left: auto; right: auto; top: auto; width: auto; }
-  .frame .artboard > * { top: auto; left: auto; right: auto; }
+  .frame .artboard > * { position: relative; top: auto; left: auto; right: auto; width: auto; }
   .hero > img { padding-top: 72px; }
   .pages .servicesMobileTitle { display: block; position: absolute; z-index: 1; left: 24px; bottom: 64px; font-size: 48px; line-height: 1.1; color: white; }
   .welcome .artboard { padding-top: 130px; }
