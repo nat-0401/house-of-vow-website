@@ -1,0 +1,37 @@
+.header-shell-redesign .site-header {
+  min-height: 82px;
+  height: 82px;
+  padding: 12px 22px 12px 30px;
+  grid-template-columns: auto 1fr auto;
+  gap: 31px;
+  background: #f2ede0;
+  color: #3b0a05;
+  border: 0;
+  font-feature-settings: "liga" 0, "dlig" 0, "calt" 0;
+}
+.header-shell-redesign .brand-link { width: 57px; height: 56px; }
+.header-shell-redesign .desktop-nav { display: flex; justify-content: flex-end; gap: 44px; font-size: 22px; line-height: 1; letter-spacing: 0; }
+.header-shell-redesign .desktop-nav a { opacity: 1; }
+.header-shell-redesign .mobile-nav { display: none; }
+.header-shell-redesign .enquire-link { min-width: 228px; height: 56px; display: flex; justify-content: center; align-items: center; font-size: 20px; font-weight: 300; padding: 0 24px; border-color: #3b0a05; }
+.header-shell-redesign:focus-within .site-header { transform: translate3d(0, 0, 0); }
+@media (min-width: 1800px) {
+  .header-shell-redesign .site-header { height: 108px; padding-inline: 40px 30px; }
+  .header-shell-redesign .desktop-nav { font-size: 28px; gap: 58px; }
+  .header-shell-redesign .enquire-link { min-width: 300px; height: 74px; font-size: 26px; }
+  .header-shell-redesign .brand-link { width: 75px; height: 74px; }
+}
+@media (max-width: 1100px) {
+  .header-shell-redesign .desktop-nav { font-size: 18px; gap: 24px; }
+  .header-shell-redesign .enquire-link { min-width: 170px; font-size: 18px; }
+}
+@media (max-width: 900px) {
+  .header-shell-redesign .site-header { height: 72px; min-height: 72px; padding: 10px 20px; grid-template-columns: 1fr auto auto; gap: 18px; }
+  .header-shell-redesign .brand-link { width: 48px; height: 50px; }
+  .header-shell-redesign .desktop-nav { display: none; }
+  .header-shell-redesign .mobile-nav { display: block; }
+  .header-shell-redesign .enquire-link { min-width: 126px; height: 43px; font-size: 15px; padding: 0 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header-shell-redesign .site-header { transition: none; }
+}

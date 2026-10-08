@@ -12,7 +12,7 @@ export function Header() {
   const pointerInsideHeaderRef = useRef(false);
   const mobileNavOpenRef = useRef(false);
   const pathname = usePathname();
-  const isRedesignRoute = pathname === "/" || pathname === "/about";
+  const isRedesignRoute = pathname === "/" || pathname === "/about" || pathname === "/services";
   const visibleNavItems = isRedesignRoute
     ? navItems.filter((item) => item.href !== "/edit")
     : navItems;
@@ -32,7 +32,7 @@ export function Header() {
 
   const scheduleIdleRetract = useCallback(() => {
     clearIdleTimer();
-    if (pointerInsideHeaderRef.current || mobileNavOpenRef.current) {
+    if (pointerInsideHeaderRef.current || mobileNavOpenRef.current || window.scrollY < 8) {
       return;
     }
 
@@ -80,7 +80,7 @@ export function Header() {
     let lastY = getScrollY();
     hasRevealedHomeHeaderRef.current = !isHome || lastY > 8;
 
-    const shouldStartHidden = isHome && !hasRevealedHomeHeaderRef.current;
+    const shouldStartHidden = false;
     applyHidden(shouldStartHidden);
     if (!shouldStartHidden) {
       scheduleIdleRetract();
@@ -97,7 +97,7 @@ export function Header() {
       }
 
       if (currentY < 8) {
-        applyHidden(isHome && !hasRevealedHomeHeaderRef.current);
+        applyHidden(false);
       } else if (currentY > lastY) {
         clearIdleTimer();
         applyHidden(true);
@@ -161,7 +161,7 @@ export function Header() {
       />
       <div
         ref={shellRef}
-        className={`header-shell ${pathname === "/" ? "is-retracted" : ""} ${
+        className={`header-shell ${
           isRedesignRoute ? "header-shell-redesign" : ""
         }`}
       >
@@ -179,7 +179,7 @@ export function Header() {
         >
           <Link href="/" className="brand-link" aria-label="The House of Vows home">
             <Image
-              src={pathname === "/" || pathname === "/about" ? assets.logoDark : assets.logoFullRed}
+              src={isRedesignRoute ? "/client-design/monogram.webp" : assets.logoFullRed}
               alt=""
               width={92}
               height={106}

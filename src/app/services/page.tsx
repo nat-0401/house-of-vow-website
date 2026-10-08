@@ -1,120 +1,41 @@
 import Image from "next/image";
-import { assets, partners, services } from "../content";
+import { DesignFrame } from "../components/DesignFrame";
+import { DesignPhoto } from "../components/DesignPhoto";
 import { JsonLd, metadataForRoute, routeSeo, servicesJsonLd } from "../seo";
+import styles from "../client-design.module.css";
 
 export const metadata = metadataForRoute(routeSeo.services);
+const offerings = [
+  { title: <>Wedding Planning<br />&amp; Coordination</>, body: "Comprehensive planning and seamless coordination for a celebration that feels effortless from beginning to end." },
+  { title: <>Wedding Concept<br />&amp; Styling</>, body: "Bringing your wedding vision to life through considered styling and professional 3D visualisation before the celebration takes shape." },
+  { title: <>Wedding Branding<br />Design</>, body: "Translating your story into a distinctive visual identity, thoughtfully woven throughout your celebration." },
+  { title: <>Destination Wedding<br />Liaison</>, body: "Making destination weddings feel closer, simpler, and beautifully considered." },
+];
 
 export default function ServicesPage() {
-  const partnerCards = [
-    { name: partners[0], image: assets.partnerEditorialOne },
-    { name: partners[1], image: assets.partnerEditorialTwo },
-    { name: partners[2], image: assets.partnerEditorialThree },
-  ];
-  const activeServices = [services[1], services[0], services[2], services[3]];
-  const serviceImages = [
-    assets.servicesCardPlanning,
-    assets.servicesCardConcept,
-    assets.servicesCardBranding,
-    assets.servicesCardDestination,
-  ];
-  const serviceSummaries = [
-    "Calm planning, sharp timelines, and supplier coordination.",
-    "A visual world shaped around your story and setting.",
-    "A cohesive identity from logo to stationery and digital touchpoints.",
-    "A thoughtful bridge between your celebration and a faraway place.",
-  ];
-
-  return (
-    <>
-      <JsonLd data={servicesJsonLd} />
-      <section className="services-editorial-hero">
-        <Image
-          src={assets.servicesHero}
-          alt="Bride and groom walking outdoors"
-          fill
-          priority
-          sizes="100vw"
-        />
-        <div className="services-editorial-title">
-          <h1>
-            Explore
-            <span>the</span>
-            Services
-          </h1>
-        </div>
-      </section>
-
-      <section className="services-editorial-intro">
-        <p className="services-intro-kicker">The House of Vows</p>
-        <h2>
-          We bring curated details, artful stories, and seamless execution to
-          weddings that feel deeply personal.
-        </h2>
-        <p>
-          From visual direction to supplier coordination, each celebration is
-          shaped with intention so every detail reflects the couple at the
-          center of it all.
-        </p>
-      </section>
-
-      <section className="services-offer-showcase" aria-labelledby="services-offer-title">
-        <div className="services-offer-heading">
-          <p className="eyebrow" id="services-offer-title">
-            What we offer
-          </p>
-          <h2>
-            A hand of services
-            <span>for artful celebrations.</span>
-          </h2>
-        </div>
-        <div className="services-card-hand">
-          {activeServices.map((service, index) => (
-            <article key={service.title} className="services-playing-card">
-              <div className="services-card-image">
-                <Image
-                  src={serviceImages[index]}
-                  alt={`${service.title} inspiration image`}
-                  fill
-                  sizes="(max-width: 720px) 82vw, 25vw"
-                />
-              </div>
-              <div className="services-card-copy">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{service.title}</h3>
-                <p className="services-card-summary">{serviceSummaries[index]}</p>
-                <p className="services-card-details">{service.body}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="services-partners-board" aria-labelledby="featured-partners-title">
-        <div className="services-partners-stage">
-          <h2 id="featured-partners-title" className="services-partners-title-back">
-            Featured Partners
-          </h2>
-          <div className="services-partners-grid">
-            {partnerCards.map((partner, index) => (
-              <figure className="services-partner-card" key={partner.name}>
-                <div className="services-partner-photo">
-                  <Image
-                    src={partner.image}
-                    alt={`${partner.name} featured partner editorial image`}
-                    fill
-                    sizes="(max-width: 900px) 78vw, 23vw"
-                  />
-                </div>
-                <figcaption>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{partner.name}</strong>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
+  return <div className={styles.pages}>
+    <JsonLd data={servicesJsonLd} />
+    <section className={styles.hero}>
+      <h1 className="sr-only">Explore our services</h1>
+      <Image src="/client-design/services-hero.webp" alt="Explore our services: The House of Vows planners on location" fill preload sizes="100vw" quality={85} />
+    </section>
+    <DesignFrame className={styles.services}>
+      <p className={styles.label}>WHAT WE BRING TO THE TABLE</p>
+      <h2 className={styles.servicesTitle}>Curated <em>details</em>, artful <em>stories</em>, seamless <em>execution</em></h2>
+      <div className={styles.offerings}>{offerings.map((service, index) => <article key={index}>
+        <DesignPhoto name="placeholder" alt="" />
+        <div className={styles.serviceHeading}><h3>{service.title}</h3><span aria-hidden="true">0{index + 1}</span></div>
+        <p>{service.body}</p>
+      </article>)}</div>
+    </DesignFrame>
+    <DesignFrame className={styles.partners} id="featured-partners">
+      <h2>Featured<br />PARTNERS</h2>
+      <div className={styles.partnerItems}>
+        {[{ name: "Handwritten by Lee", role: "WEDDING CALLIGRAPHER", body: "Bespoke hand-lettered details, crafted to give every celebration a distinctly personal touch." }, { name: "Ooh La La", role: "WEDDING DECORATOR", body: "Transforming spaces through thoughtful decor, refined details and beautifully considered execution." }].map((partner, index) => <article key={partner.name}>
+          <DesignPhoto name="placeholder" alt="" />
+          <div className={styles.partnerCopy}><span aria-hidden="true">0{index + 1}</span><div><h3>{partner.name}</h3><p>{partner.role}</p><p><em>{partner.body}</em></p></div></div>
+        </article>)}
+      </div>
+    </DesignFrame>
+  </div>;
 }
-//test

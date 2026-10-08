@@ -1,0 +1,133 @@
+.pages {
+  --wine: #3b0a05;
+  --cream: #f2ede0;
+  color: var(--cream);
+  background: var(--wine);
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 300;
+  letter-spacing: 0;
+  font-feature-settings: "liga" 0, "dlig" 0, "calt" 0;
+}
+.pages :is(h1, h2, h3, p, blockquote) { margin: 0; font-weight: 400; letter-spacing: 0; }
+.pages :is(h2, h3, blockquote) { font-family: var(--font-display), Georgia, serif; }
+.pages p { font-weight: 300; }
+.frame { position: relative; height: 100svh; overflow: hidden; }
+.artboard { position: absolute; width: 1470px; height: 830px; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(var(--frame-scale, 1)); }
+.hero { position: relative; height: 100svh; overflow: hidden; background: #171717; }
+.hero > img { object-fit: cover; object-position: center; padding-top: 82px; }
+.photo { position: relative; overflow: hidden; }
+.photo img { object-fit: cover; }
+.pages .label { font-family: var(--font-sans), sans-serif; font-size: 30px; line-height: 1.3; font-weight: 300; }
+.pill { display: inline-flex; justify-content: center; align-items: center; border: 1px solid currentColor; border-radius: 60px; font-size: 20px; line-height: 1; text-decoration: none; font-weight: 300; }
+.pill:hover { background: rgb(242 237 224 / 10%); }
+.pill:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.welcome { background: var(--cream); color: var(--wine); }
+.welcomeLabel { position: absolute; left: 82px; top: 177px; font-size: 30px; line-height: 40px; color: #790009; }
+.welcomeTitle { position: absolute; left: 82px; top: 237px; width: 1310px; font-size: 45px; line-height: 60px; color: #790009; }
+.welcomeBody { position: absolute; left: 82px; top: 379px; width: 1280px; font-size: 30px; line-height: 42px; }
+.welcomeButton { position: absolute; left: 82px; top: 487px; width: 333px; height: 82px; font-size: 24px; }
+.storyWide { position: absolute; left: 82px; top: 147px; width: 730px; height: 487px; }
+.storyTall { position: absolute; left: 1052px; top: 309px; width: 309px; height: 464px; }
+.storyTitle { position: absolute; left: 397px; top: 592px; width: 757px; font-size: 44px; line-height: 59px; text-align: right; }
+.storyButton { position: absolute; left: 397px; top: 718px; width: 264px; height: 56px; }
+.aboutFirst { position: absolute; left: 117px; top: 115px; width: 379px; height: 569px; }
+.aboutSecond { position: absolute; left: 520px; top: 115px; width: 379px; height: 569px; }
+.aboutSecond img { object-position: left; }
+.aboutPanel { position: absolute; left: 876px; top: 159px; width: 475px; height: 671px; padding: 55px 48px 0; background: var(--cream); color: var(--wine); }
+.aboutPanel p { font-family: var(--font-display), Georgia, serif; font-size: 30px; line-height: 43px; font-weight: 400; }
+.aboutPanel .label { margin-bottom: 22px; }
+.aboutPanel p + p { margin-top: 22px; }
+.aboutStory .aboutPanel { top: 0; height: 830px; padding-top: 82px; }
+.aboutStory .aboutPanel p + p { margin-top: 47px; }
+.reception { position: absolute; left: 112px; top: 115px; width: 662px; height: 600px; }
+.mission .label { position: absolute; left: 82px; top: 155px; }
+.missionLead, .missionBody { position: absolute; left: 82px; width: 1310px; font-family: var(--font-display), Georgia, serif; font-size: 30px; line-height: 43px; }
+.missionLead { top: 223px; }
+.missionBody { top: 353px; }
+.missionImages { position: absolute; left: 257px; top: 470px; display: grid; grid-template-columns: repeat(3, 295px); gap: 36px; }
+.missionImages .photo { width: 295px; height: 552px; }
+.continuation { top: -360px; }
+.vision .label { position: absolute; top: 302px; left: 0; width: 100%; text-align: center; }
+.vision blockquote { position: absolute; top: 379px; left: 80px; width: 1310px; text-align: center; font-size: 52px; line-height: 72px; }
+.visionWordmark { position: absolute; top: 694px; left: 652px; }
+.founderPhoto { position: absolute; left: 579px; top: 191px; width: 312px; height: 476px; }
+.founderPhoto img { filter: grayscale(1); }
+.founderLeft { position: absolute; left: 138px; top: 253px; width: 397px; }
+.founderLeft .label { margin-bottom: 13px; }
+.founderLeft > p:not(.label), .founderRight p { font-size: 20px; line-height: 28px; font-weight: 300; }
+.founderRight { position: absolute; left: 933px; top: 287px; width: 393px; }
+.founderRight p + p { margin-top: 28px; }
+.founderName { position: absolute; top: 628px; left: 579px; width: 312px; text-align: center; font-size: 52px; line-height: 64px; white-space: nowrap; }
+.iyoun .founderPhoto { top: 201px; }
+.iyoun .founderLeft { top: 203px; left: 134px; }
+.iyoun .founderRight { top: 417px; left: 936px; }
+.iyoun .founderName { top: 637px; }
+.services .label { position: absolute; top: 151px; width: 100%; text-align: center; font-size: 26px; }
+.servicesTitle { position: absolute; top: 193px; width: 100%; text-align: center; font-size: 48px; line-height: 60px; }
+.offerings { position: absolute; top: 308px; left: 31px; right: 31px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.offerings .photo { height: 201px; width: 100%; }
+.serviceHeading { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 9px; }
+.serviceHeading h3 { font-size: 26px; line-height: 27px; }
+.serviceHeading span { font-family: var(--font-display), serif; font-size: 50px; line-height: 54px; }
+.offerings article > p { padding-top: 14px; font-size: 16px; line-height: 21px; width: 322px; }
+.partners > .artboard > h2 { position: absolute; left: 94px; top: 246px; font-size: 78px; line-height: 82px; }
+.partnerItems { position: absolute; top: 255px; left: 559px; display: grid; grid-template-columns: repeat(2, 336px); gap: 123px; }
+.partnerItems .photo { width: 336px; height: 176px; border-radius: 18px; }
+.partnerCopy { display: grid; grid-template-columns: 45px 1fr; gap: 16px; margin-top: 28px; }
+.partnerCopy > span { font-family: var(--font-display), serif; font-size: 50px; line-height: 60px; }
+.partnerCopy h3 { font-size: 32px; line-height: 43px; white-space: nowrap; }
+.partnerCopy p { font-size: 20px; line-height: 28px; }
+.partnerCopy p + p { margin-top: 9px; font-family: var(--font-display), serif; }
+@media (max-width: 900px) {
+  .frame { height: auto; min-height: 100svh; overflow: hidden; }
+  .artboard { position: relative; width: auto; height: auto; left: auto; top: auto; transform: none; padding: 90px 24px 64px; }
+  .artboard > :is(h2, p, blockquote, a, div, img) { position: relative; left: auto; right: auto; top: auto; width: auto; }
+  .hero > img { padding-top: 72px; }
+  .welcome .artboard { padding-top: 130px; }
+  .pages .label, .welcomeLabel { font-size: 23px; line-height: 32px; }
+  .welcomeTitle { margin-top: 24px; font-size: 34px; line-height: 1.25; }
+  .welcomeBody { margin-top: 30px; font-size: 22px; line-height: 1.45; }
+  .welcomeButton { margin-top: 30px; min-height: 62px; height: auto; padding: 18px 20px; font-size: 18px; }
+  .desktopBreak { display: none; }
+  .storyWide { height: auto; aspect-ratio: 1.5; width: 88% !important; }
+  .storyTall { height: auto; aspect-ratio: 2 / 3; width: 43% !important; margin: -24px 0 0 auto; }
+  .storyTitle { margin-top: -8px; font-size: 34px; line-height: 1.25; text-align: left; }
+  .storyTitle br { display: none; }
+  .storyButton { margin-top: 26px; height: 56px; padding: 0 20px; font-size: 18px; }
+  .aboutIntro .artboard { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .aboutFirst, .aboutSecond { height: auto; aspect-ratio: 2 / 3; }
+  .aboutPanel { grid-column: 1 / -1; height: auto; padding: 32px 24px !important; }
+  .aboutPanel p { font-size: 27px; line-height: 1.4; }
+  .aboutStory .artboard { padding-top: 0; }
+  .aboutStory .aboutPanel { height: auto; }
+  .aboutStory .aboutPanel p + p { margin-top: 28px; }
+  .reception { height: auto; aspect-ratio: 1.1; margin-bottom: 24px; }
+  .missionLead, .missionBody { font-size: 27px; line-height: 1.4; margin-top: 28px !important; }
+  .missionImages { margin-top: 32px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .missionImages .photo { width: 100%; height: auto; aspect-ratio: 295 / 552; }
+  .continuation { display: none; }
+  .vision .artboard { padding-top: 64px; }
+  .vision blockquote { margin-top: 36px; font-size: 35px; line-height: 1.35; }
+  .visionWordmark { display: block; width: 167px !important; margin: 64px auto 0; }
+  .founder .artboard { display: flex; flex-direction: column; }
+  .founderLeft { order: 2; margin-top: 30px; }
+  .founderPhoto { order: 0; width: min(100%, 312px) !important; height: auto; aspect-ratio: 312 / 476; margin: 0 auto; }
+  .founderName { order: 1; font-size: 44px; margin-top: -40px !important; line-height: 56px; }
+  .founderRight { order: 3; margin-top: 28px; }
+  .founderLeft > p:not(.label), .founderRight p { font-size: 19px; line-height: 1.5; }
+  .servicesTitle { font-size: 34px; line-height: 1.25; margin-top: 20px !important; }
+  .offerings { margin-top: 36px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 20px; }
+  .offerings .photo { height: auto; aspect-ratio: 1.65; }
+  .offerings article > p { width: auto; }
+  .serviceHeading h3 { font-size: 23px; }
+  .serviceHeading span { font-size: 36px; }
+  .partners > .artboard > h2 { position: relative; left: auto; top: auto; font-size: 56px; line-height: 1.05; }
+  .partnerItems { margin-top: 36px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  .partnerItems .photo { width: 100%; height: auto; aspect-ratio: 1.9; }
+  .partnerCopy { grid-template-columns: 36px 1fr; gap: 10px; }
+  .partnerCopy h3 { white-space: normal; font-size: 29px; line-height: 1.1; }
+  .partnerCopy p { font-size: 17px; line-height: 1.4; margin-top: 12px; }
+}
+@media (max-width: 540px) {
+  .offerings, .partnerItems { grid-template-columns: 1fr; }
+}

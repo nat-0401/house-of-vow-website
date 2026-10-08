@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Footer, Header } from "./components/SiteChrome";
 import { JsonLd, organizationJsonLd, siteMetadata, websiteJsonLd } from "./seo";
 import "./globals.css";
+import "./client-header.css";
 
 const neueHaas = localFont({
   src: [
