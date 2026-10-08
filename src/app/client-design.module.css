@@ -25,7 +25,7 @@
 .welcome { background: var(--cream); color: var(--wine); }
 .welcomeLabel { position: absolute; left: 82px; top: 177px; font-family: Arial, sans-serif; font-size: 30px; line-height: 40px; color: #790009; }
 .welcomeTitle { position: absolute; left: 82px; top: 237px; width: 1310px; font-size: 43px; line-height: 60px; color: #790009; }
-.welcomeBody { position: absolute; left: 82px; top: 379px; width: 1280px; font-family: Arial, sans-serif; font-size: 30px; line-height: 42px; }
+.welcomeBody { position: absolute; left: 82px; top: 379px; width: 1280px; font-family: var(--font-sans), sans-serif; font-size: 30px; line-height: 42px; font-weight: 300; }
 .welcomeButton { position: absolute; left: 82px; top: 487px; width: 333px; height: 82px; font-size: 24px; }
 .storyWide { position: absolute; left: 82px; top: 147px; width: 730px; height: 487px; }
 .storyTall { position: absolute; left: 1052px; top: 309px; width: 309px; height: 464px; }
@@ -41,6 +41,11 @@
 .aboutPanel p + p { margin-top: 22px; }
 .aboutStory .aboutPanel { top: 0; height: 830px; padding-top: 82px; }
 .aboutStory .aboutPanel p + p { margin-top: 47px; }
+/* Continue the cream column through the space around each scaled artboard. */
+.aboutIntro .aboutPanel::after,
+.aboutStory .aboutPanel::before { content: ""; position: absolute; left: 0; right: 0; height: 100svh; background: var(--cream); pointer-events: none; }
+.aboutIntro .aboutPanel::after { top: calc(100% - 1px); }
+.aboutStory .aboutPanel::before { bottom: calc(100% - 1px); }
 .reception { position: absolute; left: 112px; top: 115px; width: 662px; height: 600px; }
 .mission .label { position: absolute; left: 82px; top: 155px; }
 .missionLead, .missionBody { position: absolute; left: 82px; width: 1310px; font-family: var(--font-display), Georgia, serif; font-size: 30px; line-height: 43px; }
@@ -49,9 +54,9 @@
 .missionImages { position: absolute; left: 257px; top: 470px; display: grid; grid-template-columns: repeat(3, 295px); gap: 36px; }
 .missionImages .photo { width: 295px; height: 552px; }
 .continuation { top: -360px; }
-.vision .label { position: absolute; top: 302px; left: 0; width: 100%; text-align: center; }
+.vision .label { position: absolute; top: 302px; left: 0; width: 100%; text-align: center; font-family: var(--font-sans), sans-serif; font-weight: 300; }
 .vision blockquote { position: absolute; top: 379px; left: 80px; width: 1310px; text-align: center; font-size: 50px; line-height: 72px; }
-.visionWordmark { position: absolute; top: 694px; left: 652px; }
+.visionWordmark { position: absolute; top: 694px; left: 641px; width: 188px; height: auto; }
 .founderPhoto { position: absolute; left: 579px; top: 191px; width: 312px; height: 476px; }
 .founderPhoto img { filter: grayscale(1); }
 .founderLeft { position: absolute; left: 138px; top: 253px; width: 397px; }
@@ -71,15 +76,15 @@
 .serviceHeading { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 9px; }
 .serviceHeading h3 { font-size: 26px; line-height: 27px; }
 .serviceHeading span { font-family: var(--font-display), serif; font-size: 50px; line-height: 54px; }
-.offerings article > p { padding-top: 14px; font-size: 16px; line-height: 21px; width: 322px; }
+.offerings article > p { padding-top: 14px; font-family: var(--font-sans), sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; width: 322px; }
 .partners > .artboard > h2 { position: absolute; left: 94px; top: 246px; font-size: 78px; line-height: 82px; }
 .partnerItems { position: absolute; top: 255px; left: 559px; display: grid; grid-template-columns: repeat(2, 336px); gap: 123px; }
 .partnerItems .photo { width: 336px; height: 176px; border-radius: 18px; }
 .partnerCopy { display: grid; grid-template-columns: 45px 1fr; gap: 16px; margin-top: 28px; }
 .partnerCopy > span { font-family: var(--font-display), serif; font-size: 50px; line-height: 60px; }
 .partnerCopy h3 { font-size: 32px; line-height: 43px; white-space: nowrap; }
-.partnerCopy p { font-size: 20px; line-height: 28px; }
-.partnerCopy p + p { margin-top: 9px; font-family: var(--font-display), serif; }
+.partnerCopy p { font-family: var(--font-sans), sans-serif; font-weight: 400; font-size: 20px; line-height: 28px; }
+.partnerCopy p + p { margin-top: 14px; font-family: var(--font-display), serif; font-weight: 400; font-style: italic; line-height: 20px; }
 @media (max-width: 900px) {
   .frame { height: auto; min-height: 100svh; overflow: hidden; }
   .artboard { position: relative; width: auto; height: auto; left: auto; top: auto; transform: none; padding: 90px 24px 64px; }
@@ -101,6 +106,7 @@
   .aboutIntro .artboard { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .aboutFirst, .aboutSecond { height: auto; aspect-ratio: 2 / 3; }
   .aboutPanel { grid-column: 1 / -1; height: auto; padding: 32px 24px !important; }
+  .aboutIntro .aboutPanel::after, .aboutStory .aboutPanel::before { display: none; }
   .aboutPanel p { font-size: 27px; line-height: 1.4; }
   .aboutStory .artboard { padding-top: 0; }
   .aboutStory .aboutPanel { height: auto; }
@@ -112,7 +118,7 @@
   .continuation { display: none; }
   .vision .artboard { padding-top: 64px; }
   .vision blockquote { margin-top: 36px; font-size: 35px; line-height: 1.35; }
-  .visionWordmark { display: block; width: 167px !important; margin: 64px auto 0; }
+  .visionWordmark { display: block; width: 188px !important; margin: 64px auto 0; }
   .founder .artboard { display: flex; flex-direction: column; }
   .founderLeft { order: 2; margin-top: 30px; }
   .founderPhoto { order: 0; width: min(100%, 312px) !important; height: auto; aspect-ratio: 312 / 476; margin: 0 auto; }

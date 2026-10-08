@@ -6,10 +6,10 @@ import styles from "../client-design.module.css";
 
 export const metadata = metadataForRoute(routeSeo.services);
 const offerings = [
-  { title: <>Wedding Planning<br />&amp; Coordination</>, body: "Comprehensive planning and seamless coordination for a celebration that feels effortless from beginning to end." },
-  { title: <>Wedding Concept<br />&amp; Styling</>, body: "Bringing your wedding vision to life through considered styling and professional 3D visualisation before the celebration takes shape." },
-  { title: <>Wedding Branding<br />Design</>, body: "Translating your story into a distinctive visual identity, thoughtfully woven throughout your celebration." },
-  { title: <>Destination Wedding<br />Liaison</>, body: "Making destination weddings feel closer, simpler, and beautifully considered." },
+  { title: <>Wedding Planning<br />&amp; Coordination</>, body: <>Comprehensive planning and seamless<br className={styles.desktopBreak} /> coordination for a celebration that feels<br className={styles.desktopBreak} /> effortless from beginning to end.</> },
+  { title: <>Wedding Concept<br />&amp; Styling</>, body: <>Bringing your wedding vision to life through<br className={styles.desktopBreak} /> considered styling and professional 3D<br className={styles.desktopBreak} /> visualisation before the celebration takes<br className={styles.desktopBreak} /> shape.</> },
+  { title: <>Wedding Branding<br />Design</>, body: <>Translating your story into a distinctive<br className={styles.desktopBreak} /> visual identity, thoughtfully woven<br className={styles.desktopBreak} /> throughout your celebration.</> },
+  { title: <>Destination Wedding<br />Liaison</>, body: <>Making destination weddings feel closer,<br className={styles.desktopBreak} /> simpler, and beautifully considered.</> },
 ];
 
 export default function ServicesPage() {

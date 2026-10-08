@@ -12,7 +12,7 @@ export function Header() {
   const pointerInsideHeaderRef = useRef(false);
   const mobileNavOpenRef = useRef(false);
   const pathname = usePathname();
-  const isRedesignRoute = pathname === "/" || pathname === "/about" || pathname === "/services";
+  const isRedesignRoute = ["/", "/about", "/services", "/client-love", "/contact"].includes(pathname);
   const visibleNavItems = isRedesignRoute
     ? navItems.filter((item) => item.href !== "/edit")
     : navItems;
