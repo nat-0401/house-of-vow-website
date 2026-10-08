@@ -20,15 +20,15 @@ export default function AboutPage() {
       <DesignPhoto name="about-production" alt="A technician preparing wedding lighting" className={styles.aboutSecond} />
       <div className={styles.aboutPanel}>
         <h1 className={styles.label}>ABOUT US</h1>
-        <p>Based in Malaysia, planning worldwide, we craft experiences that are deeply personal and visually timeless.</p>
-        <p>We believe your wedding should be more than just a day — it should be a reflection of your journey, your love, and your values. Through thoughtful storytelling and intentional design, where love stories meet artful designs.</p>
+        <p>Based in Malaysia, planning<br className={styles.desktopBreak} /> worldwide, we craft<br className={styles.desktopBreak} /> experiences that are deeply<br className={styles.desktopBreak} /> personal and visually timeless.</p>
+        <p>We believe your wedding<br className={styles.desktopBreak} /> should be more than just a day<br className={styles.desktopBreak} /> — it should be a reflection of<br className={styles.desktopBreak} /> your journey, your love, and<br className={styles.desktopBreak} /> your values. Through<br className={styles.desktopBreak} /> thoughtful storytelling and<br className={styles.desktopBreak} /> intentional design, where love<br className={styles.desktopBreak} /> stories meet artful designs.</p>
       </div>
     </DesignFrame>
     <DesignFrame className={styles.aboutStory}>
       <DesignPhoto name="about-ballroom" alt="A celebration in a beautifully draped wedding ballroom" className={styles.reception} />
       <div className={styles.aboutPanel}>
-        <p>From the first spark of inspiration to the final toast, we work closely with you to shape every detail — blending seamless coordination with refined aesthetics to ensure the entire experience feels as joyful as the celebration itself.</p>
-        <p>Our goal is to <em>redefine wedding planning and designs in Malaysia,</em> bringing timeless celebrations to life with creativity, care, and authenticity.</p>
+        <p>From the first spark of<br className={styles.desktopBreak} /> inspiration to the final toast, we<br className={styles.desktopBreak} /> work closely with you to shape<br className={styles.desktopBreak} /> every detail — blending<br className={styles.desktopBreak} /> seamless coordination with<br className={styles.desktopBreak} /> refined aesthetics to ensure the<br className={styles.desktopBreak} /> entire experience feels as joyful<br className={styles.desktopBreak} /> as the celebration itself.</p>
+        <p>Our goal is to <em>redefine wedding<br className={styles.desktopBreak} /> planning and designs in<br className={styles.desktopBreak} /> Malaysia,</em> bringing timeless<br className={styles.desktopBreak} /> celebrations to life with<br className={styles.desktopBreak} /> creativity, care, and<br className={styles.desktopBreak} /> authenticity.</p>
       </div>
     </DesignFrame>
     <DesignFrame className={styles.mission}>

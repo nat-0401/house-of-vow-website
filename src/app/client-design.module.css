@@ -11,29 +11,31 @@
 .pages :is(h1, h2, h3, p, blockquote) { margin: 0; font-weight: 400; letter-spacing: 0; }
 .pages :is(h2, h3, blockquote) { font-family: var(--font-display), Georgia, serif; }
 .pages p { font-weight: 300; }
+.pages p { hyphens: none; }
 .frame { position: relative; height: 100svh; overflow: hidden; }
 .artboard { position: absolute; width: 1470px; height: 830px; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(var(--frame-scale, 1)); }
 .hero { position: relative; height: 100svh; overflow: hidden; background: #171717; }
 .hero > img { object-fit: cover; object-position: center; padding-top: 82px; }
 .photo { position: relative; overflow: hidden; }
 .photo img { object-fit: cover; }
-.pages .label { font-family: var(--font-sans), sans-serif; font-size: 30px; line-height: 1.3; font-weight: 300; }
+.pages .label { font-family: Arial, sans-serif; font-size: 30px; line-height: 1.3; font-weight: 400; }
 .pill { display: inline-flex; justify-content: center; align-items: center; border: 1px solid currentColor; border-radius: 60px; font-size: 20px; line-height: 1; text-decoration: none; font-weight: 300; }
 .pill:hover { background: rgb(242 237 224 / 10%); }
 .pill:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 .welcome { background: var(--cream); color: var(--wine); }
-.welcomeLabel { position: absolute; left: 82px; top: 177px; font-size: 30px; line-height: 40px; color: #790009; }
-.welcomeTitle { position: absolute; left: 82px; top: 237px; width: 1310px; font-size: 45px; line-height: 60px; color: #790009; }
-.welcomeBody { position: absolute; left: 82px; top: 379px; width: 1280px; font-size: 30px; line-height: 42px; }
+.welcomeLabel { position: absolute; left: 82px; top: 177px; font-family: Arial, sans-serif; font-size: 30px; line-height: 40px; color: #790009; }
+.welcomeTitle { position: absolute; left: 82px; top: 237px; width: 1310px; font-size: 43px; line-height: 60px; color: #790009; }
+.welcomeBody { position: absolute; left: 82px; top: 379px; width: 1280px; font-family: Arial, sans-serif; font-size: 30px; line-height: 42px; }
 .welcomeButton { position: absolute; left: 82px; top: 487px; width: 333px; height: 82px; font-size: 24px; }
 .storyWide { position: absolute; left: 82px; top: 147px; width: 730px; height: 487px; }
 .storyTall { position: absolute; left: 1052px; top: 309px; width: 309px; height: 464px; }
-.storyTitle { position: absolute; left: 397px; top: 592px; width: 757px; font-size: 44px; line-height: 59px; text-align: right; }
+.storyTitle { position: absolute; left: 397px; top: 592px; width: 765px; font-size: 40px; line-height: 59px; text-align: right; }
 .storyButton { position: absolute; left: 397px; top: 718px; width: 264px; height: 56px; }
 .aboutFirst { position: absolute; left: 117px; top: 115px; width: 379px; height: 569px; }
 .aboutSecond { position: absolute; left: 520px; top: 115px; width: 379px; height: 569px; }
 .aboutSecond img { object-position: left; }
-.aboutPanel { position: absolute; left: 876px; top: 159px; width: 475px; height: 671px; padding: 55px 48px 0; background: var(--cream); color: var(--wine); }
+.aboutPanel { position: absolute; left: 876px; top: 159px; width: 475px; height: 671px; padding: 55px 26px 0 48px; background: var(--cream); color: var(--wine); }
+.servicesMobileTitle { display: none; }
 .aboutPanel p { font-family: var(--font-display), Georgia, serif; font-size: 30px; line-height: 43px; font-weight: 400; }
 .aboutPanel .label { margin-bottom: 22px; }
 .aboutPanel p + p { margin-top: 22px; }
@@ -48,7 +50,7 @@
 .missionImages .photo { width: 295px; height: 552px; }
 .continuation { top: -360px; }
 .vision .label { position: absolute; top: 302px; left: 0; width: 100%; text-align: center; }
-.vision blockquote { position: absolute; top: 379px; left: 80px; width: 1310px; text-align: center; font-size: 52px; line-height: 72px; }
+.vision blockquote { position: absolute; top: 379px; left: 80px; width: 1310px; text-align: center; font-size: 50px; line-height: 72px; }
 .visionWordmark { position: absolute; top: 694px; left: 652px; }
 .founderPhoto { position: absolute; left: 579px; top: 191px; width: 312px; height: 476px; }
 .founderPhoto img { filter: grayscale(1); }
@@ -82,7 +84,9 @@
   .frame { height: auto; min-height: 100svh; overflow: hidden; }
   .artboard { position: relative; width: auto; height: auto; left: auto; top: auto; transform: none; padding: 90px 24px 64px; }
   .artboard > :is(h2, p, blockquote, a, div, img) { position: relative; left: auto; right: auto; top: auto; width: auto; }
+  .frame .artboard > * { top: auto; left: auto; right: auto; }
   .hero > img { padding-top: 72px; }
+  .pages .servicesMobileTitle { display: block; position: absolute; z-index: 1; left: 24px; bottom: 64px; font-size: 48px; line-height: 1.1; color: white; }
   .welcome .artboard { padding-top: 130px; }
   .pages .label, .welcomeLabel { font-size: 23px; line-height: 32px; }
   .welcomeTitle { margin-top: 24px; font-size: 34px; line-height: 1.25; }

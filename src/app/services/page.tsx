@@ -17,6 +17,7 @@ export default function ServicesPage() {
     <JsonLd data={servicesJsonLd} />
     <section className={styles.hero}>
       <h1 className="sr-only">Explore our services</h1>
+      <p className={styles.servicesMobileTitle} aria-hidden="true">EXPLORE <em>our</em><br />SERVICES</p>
       <Image src="/client-design/services-hero.webp" alt="Explore our services: The House of Vows planners on location" fill preload sizes="100vw" quality={85} />
     </section>
     <DesignFrame className={styles.services}>

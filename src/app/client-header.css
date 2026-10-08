@@ -14,7 +14,7 @@
 .header-shell-redesign .desktop-nav a { opacity: 1; }
 .header-shell-redesign .mobile-nav { display: none; }
 .header-shell-redesign .enquire-link { min-width: 228px; height: 56px; display: flex; justify-content: center; align-items: center; font-size: 20px; font-weight: 300; padding: 0 24px; border-color: #3b0a05; }
-.header-shell-redesign:focus-within .site-header { transform: translate3d(0, 0, 0); }
+.header-shell-redesign:has(:focus-visible) .site-header { transform: translate3d(0, 0, 0); }
 @media (min-width: 1800px) {
   .header-shell-redesign .site-header { height: 108px; padding-inline: 40px 30px; }
   .header-shell-redesign .desktop-nav { font-size: 28px; gap: 58px; }
